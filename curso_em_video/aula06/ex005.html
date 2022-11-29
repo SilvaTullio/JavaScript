@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font: normal 18pt sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Primeira aula sobre DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div class="msg">Clique aqui</div>
+    <script>
+      var corpo = window.document.body;
+      var p1 = window.document.getElementsByTagName("p")[1];
+      p1.style.color = "blue";
+      corpo.style.background = "darkgrey";
+      /* um exemplo de como posso selecionar e modificar com a getElementsByTagName */
+      document.write(p1.innerHTML);
+      /* window.alert(p1.innerText); DESATIVADA */
+
+      /*InnerText pega o texto sem formatação. Já o InnerHTML pega o texto já formatado */
+      // var d = window.document.getElementsByClassName('msg')[0];
+      //d.style.background = "green";
+      //d.innerText = "Estou aguardando...";
+      //window.document.getElementsByName("msg").innerText = "Comando lonnngo";
+
+      var d = window.document.querySelector("div.msg");
+      d.style.background = "black";
+    </script>
+  </body>
+</html>
