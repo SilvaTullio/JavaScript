@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prompt</title>
+  </head>
+  <body>
+    <h1>Teste de prompt</h1>
+
+    <script>
+      const quebraLinha = "\n\n"; //Não necessariamente precisa estar em variavel ou constante
+      //Quanto mais \n colocar, mais linhas serão quebradas
+      var nome = window.prompt("Qual seu nome " + quebraLinha + "meu amigo?");
+      document.write(nome);
+      window.prompt("Bem vindo", "Seu nome aqui"); // Usado dessa forma o texto "seu nome aqui" irá aparecer dentro da caixa prompt
+      window.alert(nome);
+    </script>
+  </body>
+</html>
