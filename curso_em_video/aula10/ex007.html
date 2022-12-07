@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Somando numeros</title>
+    <style>
+      input {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="primeiro" id="iprimeiro" /> +
+    <input type="number" name="segundo" id="isegundo" />
+    <input type="button" value="Somar" onclick="somar()" />
+    <div id="res">Resultado</div>
+    <script>
+      function somar() {
+        var prmr = window.document.querySelector("input#iprimeiro");
+        var sgnd = window.document.querySelector("input#isegundo");
+        var res = window.document.getElementById("res");
+        var n1 = Number(prmr.value);
+        var n2 = Number(sgnd.value);
+        var S = n1 + n2;
+        res.innerHTML = "O resultado da soma é de " + S;
+      }
+    </script>
+  </body>
+</html>
