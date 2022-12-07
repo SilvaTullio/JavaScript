@@ -1,12 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <style>
+      /* Criei a css na mesma pagina por se tratar de algo simples */
+      body {
+        background-color: #3b28cc;
+      }
+      input {
+        width: 150px;
+        display: block;
+        margin: auto;
+        margin-bottom: 10px;
+      }
+      .align-items-center {
+        position: relative;
+        top: 50%;
+        transform: translateY(75%);
+        color: white;
+        background-color: #39393a;
+        box-shadow: 3px 3px rgba(0, 0, 0, 0.507);
+        width: 400px;
+        text-align: center;
+        border-radius: 10px;
+        padding: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      /* Criei a css na mesma pagina por se tratar de algo simples */
+    </style>
+  </head>
+  <body>
+    <div class="align-items-center">
+      <form method="post" autocomplete="off">
+        <h1>Numero Premiado</h1>
+        <label for="isorte">
+          <p>Digite seu numero da sorte!</p> </label
+        >
+        <input
+          type="number"
+          name="sorte"
+          id="isorte"
+          min="1"
+          max="99"
+          minlength="1"
+          maxlength="2"
+          required
+          placeholder="De 1 a 99"
+        />
+        <input type="button" value="Conferir" onclick="check()" />
+        <div id="res">Aguardando.</div>
+      </form>
+    </div>
+    <script>
+      function check() {
+        // condição de vitoria >=30 && <=40 || >=70 && <=80
+        var bg = window.document.querySelector("body");
+        var mediador = window.document.querySelector("input#isorte");
+        var pontos = Number(mediador.value);
+        if ((pontos >= 30 && pontos <= 40) || (pontos >= 70 && pontos <= 80)) {
+          res.innerHTML = "Temos um vencedor!";
+          bg.style.background = "#5FDD9D";
+        } else {
+          res.innerHTML = "Não foi dessa vez :( Continue tentando.";
+          bg.style.background = "#F2545B";
+        }
+      }
+    </script>
+  </body>
 </html>
