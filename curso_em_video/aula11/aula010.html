@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Condiçoes</title>
+  </head>
+  <body>
+    <h1>Sistema de multas</h1>
+    <form>
+      <p>Velocidade do carro:</p>
+      <input type="number" name="vel" id="ivel" required min="1" /> Km/h
+      <input type="button" value="checar" onclick="calcular()" />
+      <div id="res"></div>
+    </form>
+    <script>
+      function calcular() {
+        var multa = window.document.querySelector("input#ivel");
+        var resultado = window.document.querySelector("div#res");
+        var velo = Number(multa.value);
+        resultado.innerHTML = `<p>Sua velocidade atual é de <strong>${velo} Km/h</strong></p>`;
+        if (velo > 60) {
+          var acima = velo - 60;
+          res.innerHTML += `<p>Você estava ${acima} Km/h do limite de velocidade. <strong> Você foi multado </strong> </p>`;
+        }
+        resultado.innerHTML += "<p> Diriga sempre com cinto de segurança </p>";
+      }
+    </script>
+  </body>
+</html>
