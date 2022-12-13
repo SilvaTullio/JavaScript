@@ -5,23 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VISA</title>
+    <style>
+      body {
+        background-color: #1d1e2c;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+      form {
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.459);
+        margin: auto;
+        padding: 20px;
+        width: 600px;
+      }
+      form > input#inacional {
+        border-radius: 5px;
+        width: 150px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Descubra sua condição no nosso país.</h1>
-    <form>
-      <p>Digite o país que você nasceu.</p>
+    <form id="SuaNacionalidade" method="post">
+      <h1>Descubra sua condição no nosso país.</h1>
+      <label for="inacional">
+        <p>Digite o país que você nasceu.</p>
+      </label>
       <input type="text" name="nacional" id="inacional" required />
-      <input type="button" value="checar" onclick="verificar" />
+      <input type="button" value="Enviar" onclick="confirmar()" />
       <div id="resu"></div>
     </form>
     <script>
-      function verificar() {
+      function confirmar() {
         var bra = window.document.querySelector("input#inacional");
         var resu = window.document.querySelector("div#resu");
         var brazuca = bra.value;
-        resu.innerHTML = `<p> Você é  considerado </p> `;
+        resu.innerHTML = `<p> Seu país de origem é <strong> ${brazuca}</strong></p> `;
         if (brazuca == "Brasil" || brazuca == "brasil") {
           resu.innerHTML += `<p>Você é brasileiro! </p>`;
+        } else {
+          resu.innerHTML += `<p>Você é estrangeiro`;
         }
       }
     </script>
